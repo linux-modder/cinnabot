@@ -68,7 +68,11 @@ class CommunityRegistrationPlugin(BasePlugin):
         if current_word != "":
             words_lower.append(current_word)
         
-        if ("d'enregistrement" in words_lower and "code" in words_lower) or ("registro" in words_lower and (u'c\ufffddigo' in words_lower or 'codigo' in words_lower)) or ("registration" in words_lower and "code" in words_lower) or ("community" in words_lower and "code" in words_lower) or ("registration" in words_lower and "community" in words_lower) or ("reg code" in msg.lower()) or ("reg. code" in msg.lower()):
+        if ("d'enregistrement" in words_lower and "code" in words_lower) or ("registro" in words_lower and u'c\ufffddigo' in words_lower) or ("registration" in words_lower and "code" in words_lower) or ("community" in words_lower and "code" in words_lower) or ("registration" in words_lower and "community" in words_lower) or ("reg code" in msg.lower()) or ("reg. code" in msg.lower()):
+        if ("Registrierung" in words_lower and "Kode" in words_lower) or ("Registrierung" in words_lower and u'c\uffdode' in words_lower) or ("registration" in words_lower and "code" in words_lower) or ("community" in words_lower and "code" in words_lower) or ("registration" in words_lower and "community" in words_lower) or ("reg code" in msg.lower()) or ("reg. code" in msg.lower()):
+        if ("прописка" in words_lower and "код" in words_lower) or ("прописка" in words_lower and u'к\ufffdод' in words_lower) or ("registration" in words_lower and "code" in words_lower) or ("community" in words_lower and "code" in words_lower) or ("registration" in words_lower and "community" in words_lower) or ("reg code" in msg.lower()) or ("reg. code" in msg.lower()):
+        if ("zapisanie się" in words_lower and "Kod" in words_lower) or ("zapisanie się" in words_lower and u'k\ufffdod' in words_lower) or ("registration" in words_lower and "code" in words_lower) or ("community" in words_lower and "code" in words_lower) or ("registration" in words_lower and "community" in words_lower) or ("reg code" in msg.lower()) or ("reg. code" in msg.lower()):
+
             if not source in self._users_with_code or ((time.time() - self._users_with_code[source]) > 300):
                 self._users_with_code[source] = time.time()
                 
